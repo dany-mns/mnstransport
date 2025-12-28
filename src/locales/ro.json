@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "fleet": "Flotă",
+    "coverage": "Acoperire",
+    "quote": "Cerere Ofertă",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Transport marfă România & Europa",
+    "subtitle": "Servicii profesionale de transport rutier cu cap tractor și prelată. Acoperire națională și internațională.",
+    "cta": "Cere ofertă",
+    "ctaSecondary": "Contactează-ne"
+  },
+  "trust": {
+    "yearsLabel": "ani experiență",
+    "trucksLabel": "camioane",
+    "onTimeLabel": "livrări la timp",
+    "responseLabel": "răspuns în aceeași zi",
+    "insuredLabel": "asigurare inclusă",
+    "trackingLabel": "tracking live"
+  },
+  "services": {
+    "title": "Serviciile noastre",
+    "subtitle": "Soluții complete de transport pentru afacerea dumneavoastră",
+    "viewAll": "Vezi toate serviciile"
+  },
+  "process": {
+    "title": "Cum lucrăm",
+    "subtitle": "Proces simplu și transparent de la cerere până la livrare"
+  },
+  "fleet": {
+    "title": "Flota noastră",
+    "subtitle": "Vehicule moderne și întreținute conform standardelor europene",
+    "specs": "Specificații",
+    "features": "Caracteristici",
+    "viewFleet": "Vezi flota completă"
+  },
+  "coverage": {
+    "title": "Acoperire",
+    "subtitle": "Transport în România și principalele rute europene",
+    "romania": "România",
+    "international": "Internațional",
+    "leadTimes": "Timp estimat livrare",
+    "viewCoverage": "Vezi acoperirea completă"
+  },
+  "testimonials": {
+    "title": "Ce spun clienții",
+    "subtitle": "Feedback de la partenerii noștri de încredere"
+  },
+  "cta": {
+    "title": "Aveți nevoie de transport?",
+    "subtitle": "Contactați-ne acum pentru o ofertă personalizată. Răspundem în aceeași zi.",
+    "button": "Cere ofertă gratuită",
+    "call": "Sau sunați-ne"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Suntem aici să vă ajutăm",
+    "phone": "Telefon",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "address": "Adresă",
+    "hours": "Program",
+    "sendDocs": "Trimite documente",
+    "sendDocsDesc": "Trimiteți documentele necesare prin WhatsApp sau email"
+  },
+  "quote": {
+    "title": "Cerere ofertă",
+    "subtitle": "Completați formularul și vă răspundem în aceeași zi",
+    "step1": "Rută",
+    "step2": "Marfă",
+    "step3": "Contact",
+    "pickupCountry": "Țară ridicare",
+    "pickupCity": "Oraș ridicare",
+    "deliveryCountry": "Țară livrare",
+    "deliveryCity": "Oraș livrare",
+    "pickupDate": "Data ridicare",
+    "flexible": "Date flexibile",
+    "cargoType": "Tip marfă",
+    "pallets": "Număr paleți",
+    "weight": "Greutate (kg)",
+    "dimensions": "Dimensiuni (L x l x h)",
+    "notes": "Observații",
+    "loadingType": "Tip încărcare",
+    "loadingSide": "Laterală",
+    "loadingTop": "Superioară",
+    "loadingRear": "Posterioară",
+    "name": "Nume",
+    "company": "Companie",
+    "phone": "Telefon",
+    "email": "Email",
+    "submit": "Trimite cererea",
+    "next": "Continuă",
+    "prev": "Înapoi",
+    "success": "Cererea a fost trimisă!",
+    "successMessage": "Vă vom contacta în aceeași zi lucrătoare.",
+    "required": "Câmp obligatoriu"
+  },
+  "faq": {
+    "title": "Întrebări frecvente",
+    "subtitle": "Răspunsuri la cele mai comune întrebări"
+  },
+  "footer": {
+    "description": "Servicii profesionale de transport rutier în România și Europa.",
+    "quickLinks": "Linkuri rapide",
+    "legal": "Legal",
+    "privacy": "Confidențialitate",
+    "cookies": "Cookies",
+    "terms": "Termeni și condiții",
+    "copyright": "© {{year}} MNS Transport. Toate drepturile rezervate."
+  },
+  "legal": {
+    "privacyTitle": "Politica de confidențialitate",
+    "cookiesTitle": "Politica cookies",
+    "termsTitle": "Termeni și condiții"
+  },
+  "common": {
+    "learnMore": "Află mai mult",
+    "getQuote": "Cere ofertă",
+    "callUs": "Sună-ne",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  }
+}

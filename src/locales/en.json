@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "fleet": "Fleet",
+    "coverage": "Coverage",
+    "quote": "Get Quote",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Freight Transport Romania & Europe",
+    "subtitle": "Professional road freight transport services with curtain-sider trucks. National and international coverage.",
+    "cta": "Get a Quote",
+    "ctaSecondary": "Contact Us"
+  },
+  "trust": {
+    "yearsLabel": "years experience",
+    "trucksLabel": "trucks",
+    "onTimeLabel": "on-time delivery",
+    "responseLabel": "same-day response",
+    "insuredLabel": "always insured",
+    "trackingLabel": "live tracking"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete transport solutions for your business",
+    "viewAll": "View all services"
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Simple and transparent process from request to delivery"
+  },
+  "fleet": {
+    "title": "Our Fleet",
+    "subtitle": "Modern vehicles maintained according to European standards",
+    "specs": "Specifications",
+    "features": "Features",
+    "viewFleet": "View complete fleet"
+  },
+  "coverage": {
+    "title": "Coverage",
+    "subtitle": "Transport in Romania and main European routes",
+    "romania": "Romania",
+    "international": "International",
+    "leadTimes": "Estimated delivery time",
+    "viewCoverage": "View full coverage"
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Feedback from our trusted partners"
+  },
+  "cta": {
+    "title": "Need Transport?",
+    "subtitle": "Contact us now for a personalized quote. We respond the same day.",
+    "button": "Get Free Quote",
+    "call": "Or call us"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We're here to help",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "address": "Address",
+    "hours": "Business Hours",
+    "sendDocs": "Send Documents",
+    "sendDocsDesc": "Send required documents via WhatsApp or email"
+  },
+  "quote": {
+    "title": "Request a Quote",
+    "subtitle": "Fill out the form and we'll respond the same day",
+    "step1": "Route",
+    "step2": "Cargo",
+    "step3": "Contact",
+    "pickupCountry": "Pickup Country",
+    "pickupCity": "Pickup City",
+    "deliveryCountry": "Delivery Country",
+    "deliveryCity": "Delivery City",
+    "pickupDate": "Pickup Date",
+    "flexible": "Flexible dates",
+    "cargoType": "Cargo Type",
+    "pallets": "Number of pallets",
+    "weight": "Weight (kg)",
+    "dimensions": "Dimensions (L x W x H)",
+    "notes": "Notes",
+    "loadingType": "Loading Type",
+    "loadingSide": "Side",
+    "loadingTop": "Top",
+    "loadingRear": "Rear",
+    "name": "Name",
+    "company": "Company",
+    "phone": "Phone",
+    "email": "Email",
+    "submit": "Submit Request",
+    "next": "Continue",
+    "prev": "Back",
+    "success": "Request submitted!",
+    "successMessage": "We will contact you on the same business day.",
+    "required": "Required field"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions"
+  },
+  "footer": {
+    "description": "Professional road freight transport services in Romania and Europe.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies Policy",
+    "terms": "Terms & Conditions",
+    "copyright": "© {{year}} MNS Transport. All rights reserved."
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "cookiesTitle": "Cookies Policy",
+    "termsTitle": "Terms & Conditions"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "getQuote": "Get Quote",
+    "callUs": "Call Us",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  }
+}
