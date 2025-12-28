@@ -42,7 +42,7 @@ export function Home() {
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=80" 
+            src="./public/background.png" 
             alt="Transport trucks"
             className="w-full h-full object-cover"
           />
