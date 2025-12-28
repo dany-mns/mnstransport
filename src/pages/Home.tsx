@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import {
-  ArrowRight,
   Phone,
   MapPin,
   Globe,
@@ -12,6 +10,7 @@ import {
   Radar,
   Truck,
   ChevronDown,
+  MessageCircle,
 } from 'lucide-react'
 import { company, services, fleet, coverage } from '@/content/company'
 import { TrustStatsBar } from '@/components/TrustStatsBar'
@@ -41,9 +40,17 @@ export function Home() {
   return (
     <div className="bg-brand-navy">
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient" />
-        <div className="orb orb-orange w-[600px] h-[600px] -top-40 -right-40" />
-        <div className="orb orb-blue w-[500px] h-[500px] bottom-0 -left-40" />
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=80" 
+            alt="Transport trucks"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-brand-navy/50" />
+        </div>
+        <div className="orb orb-orange w-[600px] h-[600px] -top-40 -right-40 opacity-40" />
+        <div className="orb orb-blue w-[500px] h-[500px] bottom-0 -left-40 opacity-30" />
         <div className="absolute inset-0 noise" />
         
         <div className="container mx-auto px-4 relative z-10 pt-28 pb-16">
@@ -84,19 +91,21 @@ export function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link
-                to="/quote"
-                className="btn btn-primary text-lg py-5 px-10 group"
-              >
-                {t('hero.cta')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
               <a
                 href={`tel:${company.contact.phoneClean}`}
-                className="btn btn-secondary text-lg py-5 px-10 group"
+                className="btn btn-primary text-lg py-5 px-10 group"
               >
                 <Phone className="w-5 h-5" />
                 {t('hero.ctaSecondary')}
+              </a>
+              <a
+                href={`https://wa.me/${company.contact.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-whatsapp text-lg py-5 px-10 group"
+              >
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
               </a>
             </motion.div>
           </div>
@@ -155,13 +164,6 @@ export function Home() {
               )
             })}
           </StaggerContainer>
-          
-          <AnimatedSection delay={0.4} className="text-center mt-10">
-            <Link to="/services" className="btn btn-secondary group">
-              {t('services.viewAll')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -194,11 +196,6 @@ export function Home() {
                   ))}
                 </div>
               </div>
-              
-              <Link to="/fleet" className="btn btn-primary group">
-                {t('fleet.viewFleet')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </AnimatedSection>
             
             <AnimatedSection direction="right" className="space-y-4">
@@ -257,13 +254,6 @@ export function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-          
-          <AnimatedSection delay={0.4} className="text-center mt-10">
-            <Link to="/coverage" className="btn btn-secondary group">
-              {t('coverage.viewCoverage')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 
