@@ -5,7 +5,8 @@
     "fleet": "Flotă",
     "coverage": "Acoperire",
     "quote": "Cerere Ofertă",
-    "contact": "Contact"
+    "contact": "Contact",
+    "call": "Sună"
   },
   "hero": {
     "title": "Transport marfă România & Europa",
@@ -18,6 +19,7 @@
     "trucksLabel": "camioane",
     "onTimeLabel": "livrări la timp",
     "responseLabel": "răspuns în aceeași zi",
+    "responseTimeLabel": "Răspuns în 24h",
     "insuredLabel": "asigurare inclusă",
     "trackingLabel": "tracking live"
   },

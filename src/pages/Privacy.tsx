@@ -7,7 +7,7 @@ export function Privacy() {
 
   return (
     <>
-      <section className="gradient-bg py-16 md:py-20">
+      <section className="bg-brand-navy py-16 md:py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             {t('legal.privacyTitle')}
@@ -18,8 +18,8 @@ export function Privacy() {
       <section className="section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto prose prose-lg">
-            <div className="bg-white rounded-xl border border-[var(--color-secondary-200)] p-6 md:p-8">
-              <pre className="whitespace-pre-wrap font-sans text-[var(--color-secondary-700)] leading-relaxed">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
+              <pre className="whitespace-pre-wrap font-sans text-brand-gray leading-relaxed">
                 {legal.privacy[lang]}
               </pre>
             </div>

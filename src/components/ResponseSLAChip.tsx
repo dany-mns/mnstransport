@@ -6,15 +6,17 @@ interface ResponseSLAChipProps {
 }
 
 export function ResponseSLAChip({ className = '' }: ResponseSLAChipProps) {
-  const { i18n } = useTranslation()
-  const text = i18n.language === 'ro' ? 'Răspundem în aceeași zi' : 'Same-day response'
+  const { t } = useTranslation()
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--color-accent-100)] text-[var(--color-accent-700)] rounded-full text-sm font-medium ${className}`}
+      className={`inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-semibold border border-brand-orange/30 ${className}`}
     >
-      <Clock className="w-4 h-4" />
-      {text}
+      <span className="relative flex items-center justify-center">
+        <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-brand-orange/60"></span>
+        <Clock className="relative w-4 h-4 text-brand-orange" />
+      </span>
+      <span className="text-white/90">{t('trust.responseTimeLabel')}</span>
     </span>
   )
 }

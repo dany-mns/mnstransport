@@ -1,5 +1,8 @@
 export const company = {
   name: 'MNS Transport',
+  legalName: 'DAN LINE COMPANY SRL',
+  cui: '19813616',
+  registrationNumber: 'J22/3131/2006',
   tagline: {
     ro: 'Transport marfă România & Europa',
     en: 'Freight Transport Romania & Europe',
@@ -9,13 +12,13 @@ export const company = {
     en: 'Professional road freight transport services with curtain-sider trucks in Romania and Europe.',
   },
   contact: {
-    phone: '+40 XXX XXX XXX',
-    phoneClean: '+40XXXXXXXXX',
-    email: 'contact@mnstransport.ro',
-    whatsapp: '+40XXXXXXXXX',
+    phone: '+40 (742) 504 956',
+    phoneClean: '+40742504956',
+    email: 'mns.transport@outlook.com',
+    whatsapp: '40742504956',
     address: {
-      ro: 'Str. Exemplu nr. 1, București, România',
-      en: 'Example Street no. 1, Bucharest, Romania',
+      ro: 'Str. 1 Decembrie 1918, Bals, Jud. Iași, România',
+      en: '1 Decembrie 1918 Street, Bals, Iași County, Romania',
     },
   },
   businessHours: {

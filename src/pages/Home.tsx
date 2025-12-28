@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import {
   ArrowRight,
   Phone,
@@ -10,15 +11,16 @@ import {
   Headphones,
   Radar,
   Truck,
+  ChevronDown,
 } from 'lucide-react'
 import { company, services, fleet, coverage } from '@/content/company'
 import { TrustStatsBar } from '@/components/TrustStatsBar'
 import { ProcessTimeline } from '@/components/ProcessTimeline'
 import { Testimonials } from '@/components/Testimonials'
-import { QuoteCTA } from '@/components/QuoteCTA'
 import { ResponseSLAChip } from '@/components/ResponseSLAChip'
 import { InsuranceBadge } from '@/components/InsuranceBadge'
 import { LiveTrackingFeature } from '@/components/LiveTrackingFeature'
+import { AnimatedSection, StaggerContainer, StaggerItem } from '@/components/AnimatedSection'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   MapPin,
@@ -37,163 +39,239 @@ export function Home() {
   const vehicleType = fleet.vehicles[0].type[lang]
 
   return (
-    <>
-      <section className="relative bg-gradient-to-br from-[var(--color-secondary-900)] via-[var(--color-secondary-800)] to-[var(--color-primary-900)] text-white py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-50" />
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl">
-            <div className="flex flex-wrap gap-2 mb-6">
+    <div className="bg-brand-navy">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient" />
+        <div className="orb orb-orange w-[600px] h-[600px] -top-40 -right-40" />
+        <div className="orb orb-blue w-[500px] h-[500px] bottom-0 -left-40" />
+        <div className="absolute inset-0 noise" />
+        
+        <div className="container mx-auto px-4 relative z-10 pt-28 pb-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-wrap gap-3 mb-6 justify-center"
+            >
               <ResponseSLAChip />
               <InsuranceBadge variant="compact" />
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {t('hero.title')}
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl">
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] tracking-tight text-balance"
+            >
+              <span className="gradient-text">{t('hero.title').split(' ').slice(0, 2).join(' ')}</span>
+              <br />
+              <span className="gradient-text-orange">{t('hero.title').split(' ').slice(2).join(' ')}</span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-base md:text-lg text-[#8b95a5] mb-10 max-w-xl mx-auto leading-relaxed"
+            >
               {t('hero.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Link
                 to="/quote"
-                className="btn bg-[var(--color-accent-500)] hover:bg-[var(--color-accent-600)] text-white text-lg py-3 px-8"
+                className="btn btn-primary text-lg py-5 px-10 group"
               >
                 {t('hero.cta')}
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href={`tel:${company.contact.phoneClean}`}
-                className="btn border-2 border-white/30 text-white hover:bg-white/10 text-lg py-3 px-8"
+                className="btn btn-secondary text-lg py-5 px-10 group"
               >
                 <Phone className="w-5 h-5" />
                 {t('hero.ctaSecondary')}
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="flex flex-col items-center gap-2 text-white/40"
+          >
+            <span className="text-xs uppercase tracking-widest">{lang === 'ro' ? 'Derulează' : 'Scroll'}</span>
+            <ChevronDown className="w-5 h-5" />
+          </motion.div>
+        </motion.div>
       </section>
 
       <TrustStatsBar />
 
-      <section className="section">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">{t('services.title')}</h2>
-            <p className="section-subtitle mx-auto">{t('services.subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section id="services" className="section relative overflow-hidden">
+        <div className="orb orb-orange w-[400px] h-[400px] top-20 right-0 opacity-30" />
+        <div className="container mx-auto px-4 relative z-10">
+          <AnimatedSection className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium text-white/80 mb-4">
+              <span className="w-2 h-2 bg-brand-orange rounded-full animate-pulse" />
+              {t('services.title')}
+            </span>
+            <h2 className="section-title text-center mx-auto">{t('services.title')}</h2>
+            <p className="section-subtitle mx-auto text-center">{t('services.subtitle')}</p>
+          </AnimatedSection>
+          
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {servicesList.map((service) => {
               const IconComponent = iconMap[service.icon]
               return (
-                <div key={service.id} className="card hover:border-[var(--color-primary-300)]">
-                  <div className="w-12 h-12 bg-[var(--color-primary-100)] rounded-lg flex items-center justify-center mb-4">
-                    {IconComponent && (
-                      <IconComponent className="w-6 h-6 text-[var(--color-primary-600)]" />
-                    )}
+                <StaggerItem key={service.id}>
+                  <div className="card group h-full">
+                    <div className="w-12 h-12 glass rounded-xl flex items-center justify-center mb-4 group-hover:glow-orange transition-all duration-500">
+                      {IconComponent && (
+                        <IconComponent className="w-6 h-6 text-brand-orange" />
+                      )}
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-white mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-[#8b95a5] leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="font-semibold text-lg text-[var(--color-secondary-900)] mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-[var(--color-secondary-600)] text-sm">
-                    {service.description}
-                  </p>
-                </div>
+                </StaggerItem>
               )
             })}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/services" className="btn btn-secondary">
+          </StaggerContainer>
+          
+          <AnimatedSection delay={0.4} className="text-center mt-10">
+            <Link to="/services" className="btn btn-secondary group">
               {t('services.viewAll')}
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
+      <div className="divider-gradient" />
+
       <ProcessTimeline />
 
-      <section className="section">
-        <div className="container mx-auto px-4">
+      <div className="divider-gradient" />
+
+      <section id="fleet" className="section relative overflow-hidden">
+        <div className="orb orb-blue w-[500px] h-[500px] bottom-0 left-0 opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="section-title">{t('fleet.title')}</h2>
-              <p className="section-subtitle mb-6">{t('fleet.subtitle')}</p>
-              <div className="bg-[var(--color-secondary-100)] rounded-xl p-6 mb-6">
-                <h3 className="font-semibold text-lg mb-4">{vehicleType}</h3>
-                <div className="grid grid-cols-2 gap-4">
+            <AnimatedSection direction="left">
+              <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium text-white/80 mb-4">
+                <Truck className="w-4 h-4 text-brand-orange" />
+                {t('fleet.title')}
+              </span>
+              <h2 className="section-title text-left">{t('fleet.title')}</h2>
+              <p className="section-subtitle mb-8">{t('fleet.subtitle')}</p>
+              
+              <div className="glass rounded-2xl p-6 mb-8">
+                <h3 className="font-display font-bold text-xl text-white mb-6">{vehicleType}</h3>
+                <div className="grid grid-cols-2 gap-3">
                   {Object.entries(fleet.vehicles[0].specs).map(([key, value]) => (
-                    <div key={key} className="flex justify-between">
-                      <span className="text-[var(--color-secondary-600)] capitalize">{key}:</span>
-                      <span className="font-medium">{value}</span>
+                    <div key={key} className="flex justify-between items-center py-3 px-4 bg-white/[0.02] rounded-xl border border-white/5">
+                      <span className="text-[#8b95a5] capitalize text-sm">{key}</span>
+                      <span className="font-semibold text-white text-sm">{value}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <Link to="/fleet" className="btn btn-primary">
+              
+              <Link to="/fleet" className="btn btn-primary group">
                 {t('fleet.viewFleet')}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
-            <div className="space-y-4">
+            </AnimatedSection>
+            
+            <AnimatedSection direction="right" className="space-y-4">
               <LiveTrackingFeature />
               <InsuranceBadge />
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      <section className="section bg-[var(--color-secondary-50)]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+      <div className="divider-gradient" />
+
+      <section id="coverage" className="section relative overflow-hidden">
+        <div className="orb orb-orange w-[400px] h-[400px] top-40 right-20 opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
+          <AnimatedSection className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium text-white/80 mb-4">
+              <Globe className="w-4 h-4 text-brand-orange" />
+              {t('coverage.title')}
+            </span>
             <h2 className="section-title">{t('coverage.title')}</h2>
             <p className="section-subtitle mx-auto">{t('coverage.subtitle')}</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          </AnimatedSection>
+          
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {coverage.countries.filter((c) => c.highlighted).map((country) => (
-              <div
-                key={country.code}
-                className="bg-white rounded-xl p-6 border border-[var(--color-primary-200)] shadow-sm"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-[var(--color-primary-100)] rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-bold text-[var(--color-primary-600)]">
-                      {country.code}
-                    </span>
+              <StaggerItem key={country.code}>
+                <div className="card group h-full">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:glow-orange transition-all duration-500">
+                      <span className="text-lg font-display font-bold text-white group-hover:text-brand-orange transition-colors">
+                        {country.code}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-lg text-white">{country.name[lang]}</h3>
+                      <p className="text-xs text-brand-orange font-semibold">
+                        {country.code === 'RO'
+                          ? coverage.leadTimes[lang].domestic
+                          : country.code === 'HU'
+                          ? coverage.leadTimes[lang].hungary
+                          : coverage.leadTimes[lang].poland}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{country.name[lang]}</h3>
-                    <p className="text-sm text-[var(--color-secondary-500)]">
-                      {country.code === 'RO'
-                        ? coverage.leadTimes[lang].domestic
-                        : country.code === 'HU'
-                        ? coverage.leadTimes[lang].hungary
-                        : coverage.leadTimes[lang].poland}
-                    </p>
-                  </div>
+                  <p className="text-sm text-[#8b95a5] leading-relaxed">
+                    {country.code === 'RO'
+                      ? lang === 'ro'
+                        ? 'Acoperire completă pe tot teritoriul României'
+                        : 'Complete coverage across Romania'
+                      : lang === 'ro'
+                      ? 'Rute regulate și transport dedicat'
+                      : 'Regular routes and dedicated transport'}
+                  </p>
                 </div>
-                <p className="text-[var(--color-secondary-600)] text-sm">
-                  {country.code === 'RO'
-                    ? lang === 'ro'
-                      ? 'Acoperire completă pe tot teritoriul României'
-                      : 'Complete coverage across Romania'
-                    : lang === 'ro'
-                    ? 'Rute regulate și transport dedicat'
-                    : 'Regular routes and dedicated transport'}
-                </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/coverage" className="btn btn-secondary">
+          </StaggerContainer>
+          
+          <AnimatedSection delay={0.4} className="text-center mt-10">
+            <Link to="/coverage" className="btn btn-secondary group">
               {t('coverage.viewCoverage')}
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      <Testimonials />
+      <div className="divider-gradient" />
 
-      <QuoteCTA variant="banner" />
-    </>
+      <div id="contact">
+        <Testimonials />
+      </div>
+    </div>
   )
 }

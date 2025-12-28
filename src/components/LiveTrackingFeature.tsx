@@ -22,9 +22,11 @@ export function LiveTrackingFeature({ variant = 'card', className = '' }: LiveTr
         'Real-time transport status information',
       ]
 
+  const icons = [MessageCircle, Bell, MapPin]
+
   if (variant === 'inline') {
     return (
-      <span className={`inline-flex items-center gap-1.5 text-[var(--color-primary-600)] ${className}`}>
+      <span className={`inline-flex items-center gap-2 text-brand-tracking ${className}`}>
         <MapPin className="w-4 h-4" />
         {isRo ? 'Actualizări live' : 'Live updates'}
       </span>
@@ -32,24 +34,33 @@ export function LiveTrackingFeature({ variant = 'card', className = '' }: LiveTr
   }
 
   return (
-    <div className={`bg-[var(--color-primary-50)] border border-[var(--color-primary-200)] rounded-xl p-6 ${className}`}>
+    <div className={`card group ${className}`}>
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 bg-[var(--color-primary-100)] rounded-full flex items-center justify-center">
-          <MapPin className="w-5 h-5 text-[var(--color-primary-600)]" />
+        <div className="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:glow-blue transition-all duration-500">
+          <MapPin className="w-6 h-6 text-brand-tracking" />
         </div>
-        <h3 className="text-lg font-semibold text-[var(--color-secondary-900)]">
-          {isRo ? 'Tracking Live' : 'Live Tracking'}
-        </h3>
+        <div>
+          <h3 className="font-display text-lg font-bold text-white">
+            {isRo ? 'Tracking Live' : 'Live Tracking'}
+          </h3>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="text-xs text-green-400 font-medium">{isRo ? 'Activ' : 'Active'}</span>
+          </div>
+        </div>
       </div>
-      <ul className="space-y-2">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-2 text-sm text-[var(--color-secondary-700)]">
-            {index === 0 && <MessageCircle className="w-4 h-4 mt-0.5 text-[var(--color-primary-500)]" />}
-            {index === 1 && <Bell className="w-4 h-4 mt-0.5 text-[var(--color-primary-500)]" />}
-            {index === 2 && <MapPin className="w-4 h-4 mt-0.5 text-[var(--color-primary-500)]" />}
-            {feature}
-          </li>
-        ))}
+      <ul className="space-y-3">
+        {features.map((feature, index) => {
+          const Icon = icons[index]
+          return (
+            <li key={index} className="flex items-start gap-3">
+              <div className="w-8 h-8 glass rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon className="w-4 h-4 text-brand-tracking" />
+              </div>
+              <span className="text-sm text-[#8b95a5] pt-1">{feature}</span>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

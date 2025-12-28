@@ -17,27 +17,27 @@ export function CoverageCountriesList({ showLeadTimes = false, className = '' }:
       {coverage.countries.map((country) => (
         <div
           key={country.code}
-          className={`flex items-center gap-3 p-4 rounded-lg border transition-colors ${
+          className={`flex items-center gap-3 p-4 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-md ${
             country.highlighted
-              ? 'bg-[var(--color-primary-50)] border-[var(--color-primary-200)]'
-              : 'bg-white border-[var(--color-secondary-200)]'
+              ? 'bg-white border-brand-orange/30 hover:border-brand-orange/50'
+              : 'bg-white border-gray-200 hover:border-gray-300'
           }`}
         >
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center ${
               country.highlighted
-                ? 'bg-[var(--color-primary-100)]'
-                : 'bg-[var(--color-secondary-100)]'
+                ? 'bg-brand-navy/10'
+                : 'bg-gray-100'
             }`}
           >
-            <span className="text-lg font-bold">{country.code}</span>
+            <span className={`text-lg font-bold ${country.highlighted ? 'text-brand-navy' : 'text-brand-gray'}`}>{country.code}</span>
           </div>
           <div>
-            <p className="font-medium text-[var(--color-secondary-900)]">
+            <p className="font-medium text-brand-navy">
               {country.name[lang]}
             </p>
             {showLeadTimes && (
-              <p className="text-xs text-[var(--color-secondary-500)] flex items-center gap-1">
+              <p className="text-xs text-brand-orange flex items-center gap-1 font-medium">
                 <Clock className="w-3 h-3" />
                 {country.code === 'RO'
                   ? leadTimes.domestic
@@ -50,7 +50,7 @@ export function CoverageCountriesList({ showLeadTimes = false, className = '' }:
             )}
           </div>
           {country.highlighted && (
-            <MapPin className="w-4 h-4 text-[var(--color-primary-500)] ml-auto" />
+            <MapPin className="w-4 h-4 text-brand-orange ml-auto" />
           )}
         </div>
       ))}

@@ -5,7 +5,8 @@
     "fleet": "Fleet",
     "coverage": "Coverage",
     "quote": "Get Quote",
-    "contact": "Contact"
+    "contact": "Contact",
+    "call": "Call"
   },
   "hero": {
     "title": "Freight Transport Romania & Europe",
@@ -18,6 +19,7 @@
     "trucksLabel": "trucks",
     "onTimeLabel": "on-time delivery",
     "responseLabel": "same-day response",
+    "responseTimeLabel": "24h Response",
     "insuredLabel": "always insured",
     "trackingLabel": "live tracking"
   },
