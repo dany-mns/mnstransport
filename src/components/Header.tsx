@@ -66,7 +66,7 @@ export function Header() {
   const isActive = (id: string) => location.pathname === '/' && activeSection === id
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled || mobileMenuOpen
         ? 'glass-strong py-4'
         : 'bg-transparent py-6'
@@ -92,12 +92,12 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`relative px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
+                className={`relative text-sm font-medium transition-all duration-300 ${
                   isActive(link.id)
                     ? 'text-white'
                     : 'text-white/60 hover:text-white'
@@ -105,29 +105,31 @@ export function Header() {
               >
                 {link.label}
                 {isActive(link.id) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-orange rounded-full" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-orange rounded-full" />
                 )}
               </button>
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4">
             <LanguageSwitcher />
+            
             <a
               href={`tel:${company.contact.phoneClean}`}
-              className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors"
+              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline">{company.contact.phone}</span>
+              <span className="hidden xl:inline text-sm font-medium">{company.contact.phone}</span>
             </a>
+            
             <a
               href={`https://wa.me/${company.contact.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp py-2.5 px-6 text-sm"
+              className="btn btn-whatsapp py-2.5 px-5 text-sm"
             >
               <MessageCircle className="w-4 h-4" />
-              WhatsApp
+              <span>WhatsApp</span>
             </a>
           </div>
 
