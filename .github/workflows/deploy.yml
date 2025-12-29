@@ -35,7 +35,7 @@ jobs:
         timeout-minutes: 10
         run: |
           ssh deploy-server 'set -e;
-            cd /home/${{ secrets.USER }}/fds;
+            cd /home/${{ secrets.USER }}/fds/mnstransport;
             git fetch origin main;
             git reset --hard origin/main;
             docker build -t mnstransport .;
