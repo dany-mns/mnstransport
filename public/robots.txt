@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mnstransport.ro/sitemap.xml
+Sitemap: https://mnstransport.eu/sitemap.xml
